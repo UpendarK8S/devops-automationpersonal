@@ -6,7 +6,8 @@ pipeline {
     stages{
         stage('Build Maven'){
             steps{
-                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/UpendarK8S/devops-automationpersonal']]])                sh 'mvn clean install'
+                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/UpendarK8S/devops-automationpersonal']]])           
+                 sh 'mvn clean install'
             }
         }
         stage('Build docker image'){
